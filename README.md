@@ -6,5 +6,6 @@ Run like this:
 docker compose-up --build --force-recreate
 ```
 
-Coverage lands in `coverage/`.  Combine and report it there.
+Coverage lands in `coverage/`.  Symlink in the `src` directory from a
+Twisted checkout there, then combine and report.
 

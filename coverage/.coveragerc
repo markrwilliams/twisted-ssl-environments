@@ -6,7 +6,7 @@ source = twisted
 [paths]
 source=
    src/twisted
-   /venv/*/lib/python*/site-packages/twisted
+   /venv/lib/python*/site-packages/twisted
 
 [report]
 precision = 2
