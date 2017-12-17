@@ -1,0 +1,20 @@
+twisted-openssl101-no-ecdhe:
+  build: openssl101-no-ecdhe/
+  volumes:
+    - /home/mrw/src/python/twisted:/twisted
+    - ./coverage:/coverage
+twisted-openssl101:
+  build: openssl101/
+  volumes:
+    - /home/mrw/src/python/twisted:/twisted
+    - ./coverage:/coverage
+twisted-openssl102:
+  build: openssl102/
+  volumes:
+    - /home/mrw/src/python/twisted:/twisted
+    - ./coverage:/coverage
+twisted-openssl110:
+  build: openssl110/
+  volumes:
+    - /home/mrw/src/python/twisted:/twisted
+    - ./coverage:/coverage

@@ -1,0 +1,13 @@
+[run]
+branch = True
+parallel = True
+source = twisted
+
+[paths]
+source=
+   src/twisted
+   /venv/*/lib/python*/site-packages/twisted
+
+[report]
+precision = 2
+ignore_errors = True
