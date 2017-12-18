@@ -1,20 +1,87 @@
-twisted-openssl101-no-ecdhe:
+trial-openssl101-no-ecdhe:
   build: openssl101-no-ecdhe/
+  environment:
+    - DEPENDENCIES=--no-binary cryptography cryptography==1.7 pyOpenSSL==16.2.0
+  entrypoint:
+    - bash
+    - /coverage/coverage.sh
   volumes:
-    - /home/mrw/src/python/twisted:/twisted
+    - ${TWISTED_CHECKOUT}:/twisted
     - ./coverage:/coverage
-twisted-openssl101:
+trial-openssl101:
   build: openssl101/
+  environment:
+    - DEPENDENCIES=--no-binary cryptography pyOpenSSL==16.2.0
+  environment:
+    - CRYPTOGRAPHY_VERSION=1.6
+    - PYOPENSSL=16.0.0
+  entrypoint:
+    - bash
+    - /coverage/coverage.sh
   volumes:
-    - /home/mrw/src/python/twisted:/twisted
+    - ${TWISTED_CHECKOUT}:/twisted
     - ./coverage:/coverage
-twisted-openssl102:
+trial-openssl102:
   build: openssl102/
+  environment:
+    - DEPENDENCIES=--no-binary cryptography pyOpenSSL==16.2.0
+  environment:
+    - CRYPTOGRAPHY_VERSION=
+    - PYOPENSSL=16.0.0
+  entrypoint:
+    - bash
+    - /coverage/coverage.sh
   volumes:
-    - /home/mrw/src/python/twisted:/twisted
+    - ${TWISTED_CHECKOUT}:/twisted
     - ./coverage:/coverage
-twisted-openssl110:
+trial-openssl110:
   build: openssl110/
+  environment:
+    - DEPENDENCIES=--no-binary cryptography pyOpenSSL==16.2.0
+  entrypoint:
+    - bash
+    - /coverage/coverage.sh
   volumes:
-    - /home/mrw/src/python/twisted:/twisted
+    - ${TWISTED_CHECKOUT}:/twisted
     - ./coverage:/coverage
+
+sanity-openssl101-no-ecdhe:
+  build: openssl101-no-ecdhe/
+  environment:
+    - DEPENDENCIES=--no-binary cryptography cryptography==1.7 pyOpenSSL==16.2.0
+  entrypoint:
+    - bash
+    - /sanity/sanity.sh
+  volumes:
+    - ${TWISTED_CHECKOUT}:/twisted
+    - ./sanity:/sanity
+sanity-openssl101:
+  build: openssl101/
+  environment:
+    - DEPENDENCIES=--no-binary cryptography pyOpenSSL==16.2.0
+  entrypoint:
+    - bash
+    - /sanity/sanity.sh
+  volumes:
+    - ${TWISTED_CHECKOUT}:/twisted
+    - ./sanity:/sanity
+sanity-openssl102:
+  build: openssl102/
+  environment:
+    - DEPENDENCIES=--no-binary cryptography pyOpenSSL==16.2.0
+  entrypoint:
+    - bash
+    - /sanity/sanity.sh
+  volumes:
+    - ${TWISTED_CHECKOUT}:/twisted
+    - ./sanity:/sanity
+sanity-openssl110:
+  build: openssl110/
+  environment:
+    - DEPENDENCIES=--no-binary cryptography pyOpenSSL==16.2.0
+  entrypoint:
+    - bash
+    - /sanity/sanity.sh
+  volumes:
+    - ${TWISTED_CHECKOUT}:/twisted
+    - ./sanity:/sanity

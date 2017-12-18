@@ -2,7 +2,13 @@
 
 set -e
 apt-get update
+
+apt-get install -y rsync
+rsync -aL /etc/ssl/certs .
 apt-get purge -y openssl libssl-dev
+mkdir -p /etc/ssl
+cp -r certs /etc/ssl
+
 apt-get install -y build-essential
 cd /openssl
 ./Configure \
