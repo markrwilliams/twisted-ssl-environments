@@ -12,9 +12,9 @@ cp -r certs /etc/ssl
 apt-get install -y build-essential
 cd /openssl
 ./Configure \
-    --prefix=/usr \
-    --openssldir=/usr/lib/ssl \
-    --libdir=lib/x86_64-linux-gnu \
+    --prefix=/usr/local \
+    --libdir=lib/ \
+    --openssldir=/usr/local/openssl \
     -fPIC \
     no-idea \
     no-mdc2 \
