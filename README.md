@@ -12,7 +12,7 @@ There are two sets of services defined in `docker-compose.yml`:
    different versions of OpenSSL.  **Only OpenSSL 1.1.0 will run
    successfully.  This includes `sanity-debian9` which runs the
    reproducing script against Debian 9 as described in the ticket,
-   demonstrating the effectiveness of the patch.
+   demonstrating the effectiveness of the patch.**
 
 Here's an overview of the dependencies:
 

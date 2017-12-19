@@ -2,3 +2,4 @@ coverage/src
 coverage/*.coverage.*
 coverage/.coverage
 coverage/htmlcov
+.env
