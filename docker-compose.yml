@@ -49,7 +49,20 @@ trial-openssl110:
     - bash
     - /coverage/coverage.sh
   volumes:
-
+    - ./setup:/setup
+    - ${TWISTED_CHECKOUT}:/twisted
+    - ./coverage:/coverage
+trial-debian9:
+  build: openssl110/
+  environment:
+    - OPENSSL_VERSION=0x10100000
+    - CRYPTOGRAPHY_VERSION=cryptography
+    - PYOPENSSL_VERSION=pyOpenSSL==16.2.0
+  entrypoint:
+    - bash
+    - /coverage/coverage.sh
+  volumes:
+    - ./setup:/setup
     - ${TWISTED_CHECKOUT}:/twisted
     - ./coverage:/coverage
 
@@ -94,6 +107,19 @@ sanity-openssl102:
     - ./sanity:/sanity
 sanity-openssl110:
   build: openssl110/
+  environment:
+    - OPENSSL_VERSION=0x10100000
+    - CRYPTOGRAPHY_VERSION=cryptography
+    - PYOPENSSL_VERSION=pyOpenSSL==16.2.0
+  entrypoint:
+    - bash
+    - /sanity/sanity.sh
+  volumes:
+    - ./setup:/setup
+    - ${TWISTED_CHECKOUT}:/twisted
+    - ./sanity:/sanity
+sanity-debian9:
+  build: debian9/
   environment:
     - OPENSSL_VERSION=0x10100000
     - CRYPTOGRAPHY_VERSION=cryptography
