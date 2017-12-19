@@ -55,7 +55,7 @@ and the symlink couldn't be followed out of a Docker container.
 
 ## Sanity
 
-Run each `trial` environment like this:
+Run each `sanity` environment like this:
 
 ```
 docker-compose -e TWISTED_CHECKOUT=/path/to/twisted/checkout run sanity-debian9
